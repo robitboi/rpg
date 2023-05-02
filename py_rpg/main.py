@@ -5,12 +5,12 @@ def get_choices(menu: str, legal_choices: tuple) -> str:
         user_input = input("Your choice: ")
         for choice in legal_choices:
             if user_input == choice:
-                return(user_choice)
+                return user_choice
 
         if user_choice not in legal_choices:
             print("Not an option, select one of the available choices: ")
             print(legal_choices)
-    return(user_choice)
+    return user_choice
 
 def planet_express_hq():
     print("Good news everyone! A visitor is here\n")
@@ -18,12 +18,11 @@ def planet_express_hq():
     print(" the magic happens. Several deliveries are made out here everyday.")
     print("\n Why not stick around a bit and talk to the crew")
 
-    if __name__ == "__main__":
-        menu =  "\n People to talk to: \n\t1 - Leela\n\t2 - Fry"
-        menu += "\n\t3 - Bender\n\t4 - Zoidberg\n\t5 - Back"
-        selection = get_choices(menu, ("1", "2", "3", "4", "5"))
-        print(f"You selected {selection}")
-        return hq_people()
+    menu =  "\n People to talk to: \n\t1 - Leela\n\t2 - Fry"
+    menu += "\n\t3 - Bender\n\t4 - Zoidberg\n\t5 - Back"
+    selection = get_choices(menu, ("1", "2", "3", "4", "5"))
+    print(f"You selected {selection}")
+    hq_people()
 
 def hq_people():
     if selection == "1":
@@ -51,8 +50,7 @@ def hq_people():
 
 def apartment_fry():
     if selection == "2":
-       print("") 
-    if __name__ == "__main__":
+        print("") 
         menu =  "\n People to talk to: \n\t1 - Fry\n\t2 - Bender"
         menu += "\n\t3 - Seymour Butts\n\t4 - Back"
         selection = get_choices(menu, ("1", "2", "3", "4"))
@@ -78,7 +76,6 @@ def apartment_people():
 def visit_moon():
     if selection == "3":
         print("")
-    if __name__ == "__main__":
         menu =  "\n People to talk to: \n\t1 - Zap Brannigan\n\t2 - Don Bot"
         menu += "\n\t3 - Amy Wong\n\t4 - Back"
         selection = get_choices(menu, ("1", "2", "3", "4"))
