@@ -104,7 +104,6 @@ if __name__ == "__main__":
     selection = get_choices(menu, ("1", "2", "3"))
 
     print(f"\nYou selected {selection}")
-    print(type(selection))
     if selection == "1":
         planet_express_hq()
     elif selection == "2":
