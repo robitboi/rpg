@@ -5,7 +5,7 @@ def get_choices(menu: str, legal_choices: tuple) -> str:
         user_input = input("Your choice: ")
         for choice in legal_choices:
             if user_input == choice:
-                return user_choice
+                return user_input
 
         if user_choice not in legal_choices:
             print("Not an option, select one of the available choices: ")
@@ -14,17 +14,17 @@ def get_choices(menu: str, legal_choices: tuple) -> str:
 
 def planet_express_hq():
     print("Good news everyone! A visitor is here\n")
-    print("Hello there! I'm Professor Farnswort\n Welcome to the Planet Express Headquarters. This is where all ")
+    print("Hello there! I'm Professor Farnsworth\n Welcome to the Planet Express Headquarters. This is where all ")
     print(" the magic happens. Several deliveries are made out here everyday.")
     print("\n Why not stick around a bit and talk to the crew")
 
     menu =  "\n People to talk to: \n\t1 - Leela\n\t2 - Fry"
     menu += "\n\t3 - Bender\n\t4 - Zoidberg\n\t5 - Back"
     selection = get_choices(menu, ("1", "2", "3", "4", "5"))
-    print(f"You selected {selection}")
-    hq_people()
+    print(f"You selected: {selection}")
+    hq_people(selection)
 
-def hq_people():
+def hq_people(selection):
     if selection == "1":
         print("I'm Leela. I'm the captain of the ship and I tell everyone what to do around here.")
         print(" Just between you and me, I think I should be working better. I'm surrounded")
@@ -48,7 +48,7 @@ def hq_people():
         planet_express_hq()
 
 
-def apartment_fry():
+def apartment_fry(selection):
     if selection == "2":
         print("") 
         menu =  "\n People to talk to: \n\t1 - Fry\n\t2 - Bender"
@@ -58,7 +58,7 @@ def apartment_fry():
         return (apartment_people)
 
 
-def apartment_people():
+def apartment_people(selection):
     if selection == "1":
         print("Welcome to my apartment. This is where all the Fry magic happens. ")
         print("Over there is Bender's closet. It still weird to me that he sleeps in a closet. ")
@@ -73,7 +73,7 @@ def apartment_people():
     elif selection == "4":
         apartment_fry()
 
-def visit_moon():
+def visit_moon(selection):
     if selection == "3":
         print("")
         menu =  "\n People to talk to: \n\t1 - Zap Brannigan\n\t2 - Don Bot"
@@ -83,7 +83,7 @@ def visit_moon():
         return moon_people()
 
 
-def moon_people():
+def moon_people(selection):
     if selection == "1":
         print("I'm Zap Brannigan! The universes most handsome and talented pilot. Don't stare too long, ")
         print("it may hurt your eyes how amazing I am. I'm here on the moon on a top secret mission. ")
@@ -103,7 +103,7 @@ if __name__ == "__main__":
     menu += "\t2 - Go to Fry's apartment\n\t3 - Visit the moon\n\n"
     selection = get_choices(menu, ("1", "2", "3"))
 
-    print(f"\nYou selected {selection}")
+    print(f"\nYou selected {selection}") 
     if selection == "1":
         planet_express_hq()
     elif selection == "2":
